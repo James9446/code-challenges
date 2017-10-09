@@ -52,7 +52,7 @@ function transformFirstAndLast(array){
   var obj = {};
   var value = array.slice(-1)[0];
 
-  obj[first] = value;
+  obj[property] = value;
 
   console.log(obj)
 }
