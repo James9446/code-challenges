@@ -22,20 +22,39 @@ function transformFirstAndLast(array) {
 }
 */
 
-function transformFirstAndLast(array) {
+// function transformFirstAndLast(array) {
+//   var obj = {};
+//   var lastItem = array.length -1;
+//   var descriptor = Object.create(null); // no inherited properties
+//   // not enumerable, not configurable, not writable as defaults
+//   descriptor.value = 'static';
+//   Object.defineProperty(obj, 'key', descriptor);
+//   Object.defineProperty(obj, array[0], {
+//     value: array[lastItem],
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   });
+//   return obj;
+// }
+
+// console.log(transformFirstAndLast(['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']));
+
+// Simple solution 
+
+// Test arrays
+var newArray= ["Robert" ,"Eddy", "Frank", "Glatzel"]
+var newArray2 = ['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce'];
+
+
+function transformFirstAndLast(array){
+  var property = array[0];
   var obj = {};
-  var lastItem = array.length -1;
-  var descriptor = Object.create(null); // no inherited properties
-  // not enumerable, not configurable, not writable as defaults
-  descriptor.value = 'static';
-  Object.defineProperty(obj, 'key', descriptor);
-  Object.defineProperty(obj, array[0], {
-    value: array[lastItem],
-    writable: true,
-    enumerable: true,
-    configurable: true
-  });
-  return obj;
+  var value = array.slice(-1)[0];
+
+  obj[first] = value;
+
+  console.log(obj)
 }
 
-console.log(transformFirstAndLast(['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']));
+transformFirstAndLast(newArray2);
