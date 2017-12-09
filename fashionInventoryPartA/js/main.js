@@ -40,12 +40,18 @@ function getShoeInventory(obj) {
   return inventory.trim();
 }
 
+// function renderInventory(arr) {
+//   var inventory = '';
+//   for (var i = 0; i < arr.length; i++) {
+//     inventory += getShoeInventory(arr[i]) + '\n';
+//   }
+//   return inventory.trim();
+// }
+
 function renderInventory(arr) {
-  var inventory = '';
-  for (var i = 0; i < arr.length; i++) {
-    inventory += getShoeInventory(arr[i]) + '\n';
-  }
-  return inventory.trim();
+  return arr.map(function(i) {
+    return getShoeInventory(i) + '\n';
+  }).join('');
 }
 
 
